@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="calculator.css" />
+    <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>Calculator</h1>
+    <div class="calculatorBase">
+      <p class="showCalculation"></p>
+      <div class="characters">
+        <button onclick=" updateCalculation('1')">1</button>
+        <button onclick=" updateCalculation('2')">2</button>
+        <button onclick=" updateCalculation('3')">3</button>
+        <button onclick=" updateCalculation(' + ')" class="operators">+</button>
+        <button onclick=" updateCalculation('4')">4</button>
+        <button onclick=" updateCalculation('5')">5</button>
+        <button onclick=" updateCalculation('6')">6</button>
+        <button onclick=" updateCalculation(' - ')" class="operators">-</button>
+        <button onclick=" updateCalculation('7')">7</button>
+        <button onclick=" updateCalculation('8')">8</button>
+        <button onclick=" updateCalculation('9')">9</button>
+        <button onclick=" updateCalculation(' * ')" class="operators">*</button>
+        <button onclick=" updateCalculation('0')">0</button>
+        <button
+          onclick="calculation=''; displayCalculation();
+
+    //Whenever we update the calculation, save it using .setItem
+            localStorage.setItem('calculation', calculation);"
+        >
+          C
+        </button>
+        <button
+          onclick=" calculation = eval(calculation);
+            displayCalculation();
+
+            // Remember to save the calculation here.
+            localStorage.setItem('calculation', calculation);
+            "
+        >
+          =
+        </button>
+
+        <button onclick="updateCalculation(' / ')" class="operators">/</button>
+      </div>
+    </div>
+    <script src="calculator.js"></script>
+  </body>
+</html>
